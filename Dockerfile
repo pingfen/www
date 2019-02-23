@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM jojomi/hugo:latest
 MAINTAINER Xue Bing <xuebing1110@gmail.com>
 
 # repo
@@ -16,14 +16,15 @@ RUN apk add --no-cache tzdata \
 RUN apk add git curl wget
 
 # hugo
-#RUN curl https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.tar.gz -o hugo_0.54.0_Linux-64bit.tar.gz
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.54.0/hugo_0.54.0_Linux-64bit.tar.gz -O hugo_0.54.0_Linux-64bit.tar.gz
-RUN tar xzvf ./hugo_0.54.0_Linux-64bit.tar.gz
-RUN cp ./hugo /usr/local/bin/
+RUN mkdir /app
+WORKDIR /app
 RUN hugo version
 RUN hugo new site www
-RUN cd www
-RUN git clone https://github.com/jugglerx/hugo-hero-theme.git themes/hugo-hero-theme
+WORKDIR /app/www
+RUN wget https://github.com/JugglerX/hugo-hero-theme/archive/master.zip -O themes/hugo-hero-theme.zip
+RUN unzip themes/hugo-hero-theme.zip -d ./themes
+RUN mv ./themes/hugo-hero-theme-master ./themes/hugo-hero-theme
+RUN cp -a themes/hugo-hero-theme/exampleSite/. .
 COPY ./config.toml ./config.toml
 
 EXPOSE 80
