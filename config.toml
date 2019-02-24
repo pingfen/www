@@ -21,19 +21,24 @@ theme = "hugo-hero-theme"
     meta_twitter_creator = "@zerostaticio"
 
 [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
 	name = "服务"
 	url = "/services/"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     name = "产品"
     url = "/work/"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "联系我们"
     url = "/contact/"
-    weight = 3
+    weight = 4
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"
