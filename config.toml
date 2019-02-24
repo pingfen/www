@@ -31,14 +31,9 @@ theme = "hugo-hero-theme"
     weight = 2
 
 [[menu.main]]
-    name = "产品"
-    url = "/work/"
-    weight = 3
-
-[[menu.main]]
     name = "联系我们"
     url = "/contact/"
-    weight = 4
+    weight = 3
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"
