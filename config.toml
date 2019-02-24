@@ -1,6 +1,6 @@
 baseURL = "www.pingfen.io"
 languageCode = "en-us"
-title = "首页"
+title = "青岛平分科技官网"
 themesDir = "themes"
 theme = "hugo-hero-theme"
 

@@ -25,6 +25,8 @@ RUN wget https://github.com/JugglerX/hugo-hero-theme/archive/master.zip -O theme
 RUN unzip themes/hugo-hero-theme.zip -d ./themes
 RUN mv ./themes/hugo-hero-theme-master ./themes/hugo-hero-theme
 RUN cp -a themes/hugo-hero-theme/exampleSite/. .
+COPY static/images/* ./themes/hugo-hero-theme/static/images/
+COPY static/favicon.png ./static/favicon.png
 
 # my configuration
 COPY ./content ./content
@@ -32,8 +34,11 @@ COPY ./data ./data
 COPY ./config.toml ./config.toml
 
 # custome layouts
+RUN sed -i 's/images\/logo.svg/images\/logo.png/g' ./themes/hugo-hero-theme/layouts/partials/header.html
+RUN sed -i 's/images\/logo-mobile.svg/images\/logo-mobile.png/g' ./themes/hugo-hero-theme/layouts/partials/header.html
 RUN sed -i 's/Our Services/{{ .Site.Params.service_name }}/g' ./themes/hugo-hero-theme/layouts/index.html
 RUN sed -i 's/View All Services/{{ .Site.Params.view_all_service }}/g' ./themes/hugo-hero-theme/layouts/index.html
+RUN sed -i 's/Hugo Hero Theme Demo/{{ .Site.title }}/g' ./themes/hugo-hero-theme/layouts/index.html
 RUN sed -i 's/{{ .Permalink }}/#/g' ./themes/hugo-hero-theme/layouts/services/summary.html
 RUN sed -i 's/www.zerostatic.io/{{ .Site.BaseURL }}/g' ./themes/hugo-hero-theme/layouts/partials/sub-footer.html
 
