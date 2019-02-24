@@ -10,7 +10,7 @@ theme = "hugo-hero-theme"
   view_all_service="查看所有服务"
 
   [params.homepage_meta_tags]
-    meta_description = "青岛平分科技有限公司成立于2018年12月，是最早基于互联网技术协助政企数字化转型的公司之一。"
+    meta_description = "青岛平分科技有限公司成立于2018年12月，是最早基于移动互联网技术为核心助力政企数字化转型的公司之一。"
     meta_og_title = "青岛平分科技有限公司"
     meta_og_type = "website"
     meta_og_url = "http://www.pingfen.io"
