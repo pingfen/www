@@ -38,7 +38,7 @@ RUN sed -i 's/images\/logo.svg/images\/logo.png/g' ./themes/hugo-hero-theme/layo
 RUN sed -i 's/images\/logo-mobile.svg/images\/logo-mobile.png/g' ./themes/hugo-hero-theme/layouts/partials/header.html
 RUN sed -i 's/Our Services/{{ .Site.Params.service_name }}/g' ./themes/hugo-hero-theme/layouts/index.html
 RUN sed -i 's/View All Services/{{ .Site.Params.view_all_service }}/g' ./themes/hugo-hero-theme/layouts/index.html
-RUN sed -i 's/Hugo Hero Theme Demo/{{ .Site.title }}/g' ./themes/hugo-hero-theme/layouts/index.html
+RUN sed -i 's/Hugo Hero Theme Demo/{{ .Site.Title }}/g' ./themes/hugo-hero-theme/layouts/index.html
 RUN sed -i 's/{{ .Permalink }}/#/g' ./themes/hugo-hero-theme/layouts/services/summary.html
 RUN sed -i 's/www.zerostatic.io/{{ .Site.BaseURL }}/g' ./themes/hugo-hero-theme/layouts/partials/sub-footer.html
 
