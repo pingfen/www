@@ -29,6 +29,7 @@ COPY static/images/* ./themes/hugo-hero-theme/static/images/
 COPY static/favicon.png ./static/favicon.png
 
 # my configuration
+RUN rm -f ./content/services/*
 COPY ./content ./content
 COPY ./data ./data
 COPY ./config.toml ./config.toml
