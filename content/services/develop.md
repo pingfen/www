@@ -1,10 +1,10 @@
 ---
 title: '软件开发'
 date: 2018-11-18T12:33:46+10:00
-icon: 'services/service-icon-3.png'
+icon: 'services/service-icon-4.png'
 draft: false
 featured: true
-weight: 3
+weight: 4
 heroHeading: '软件开发'
 heroSubHeading: '提供专业软件开发'
 heroBackground: 'services/service1.jpg'
