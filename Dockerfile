@@ -43,5 +43,8 @@ RUN sed -i 's/Hugo Hero Theme Demo/{{ .Site.Title }}/g' ./themes/hugo-hero-theme
 RUN sed -i 's/{{ .Permalink }}/#/g' ./themes/hugo-hero-theme/layouts/services/summary.html
 RUN sed -i 's/www.zerostatic.io/{{ .Site.BaseURL }}/g' ./themes/hugo-hero-theme/layouts/partials/sub-footer.html
 
+# replace google resource
+RUN sed -i 's/https:\/\/fonts.googleapis.com/http:\/\/fonts.proxy.ustclug.org/g' ./themes/hugo-hero-theme/assets/scss/style.scss
+
 EXPOSE 80
 CMD hugo server --bind 0.0.0.0 -p 80 --baseURL http://www.pingfen.io
