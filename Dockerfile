@@ -47,4 +47,4 @@ RUN sed -i 's/www.zerostatic.io/{{ .Site.BaseURL }}/g' ./themes/hugo-hero-theme/
 RUN sed -i 's/https:\/\/fonts.googleapis.com/http:\/\/fonts.proxy.ustclug.org/g' ./themes/hugo-hero-theme/assets/scss/style.scss
 
 EXPOSE 443
-CMD hugo server --bind 0.0.0.0 -p 443 --baseURL https://www.pingfen.io
+CMD hugo server --bind 0.0.0.0 -p 443 --baseURL https://pingfen.io
