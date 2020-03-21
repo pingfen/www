@@ -21,7 +21,7 @@ WORKDIR /app
 RUN hugo version
 RUN hugo new site www
 WORKDIR /app/www
-RUN wget https://github.com/JugglerX/hugo-hero-theme/archive/master.zip -O themes/hugo-hero-theme.zip
+RUN wget https://codeload.github.com/JugglerX/hugo-hero-theme/zip/master -O themes/hugo-hero-theme.zip
 RUN unzip themes/hugo-hero-theme.zip -d ./themes
 RUN mv ./themes/hugo-hero-theme-master ./themes/hugo-hero-theme
 RUN cp -a themes/hugo-hero-theme/exampleSite/. .
